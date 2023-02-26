@@ -29,10 +29,9 @@ https://user-images.githubusercontent.com/109248529/221398429-bfac577a-8cfc-41ba
   
   ### (kitty as terminal)
   1. waybar
-  2. neovim + custom wal theme 
-  3. ncmpcpp + mpd
-  4. pipes.sh
+  2. ncmpcpp + mpd
+  3. pipes.sh
   4. dunst
-  6. Firefox
-  7. VSCodium + wal extension
+  5. Firefox
+  6. VSCodium + wal extension
 </details>
