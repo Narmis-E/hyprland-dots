@@ -5,7 +5,7 @@ Tokyonight:
 ![](https://github.com/Narmis-E/hyprland-dots/blob/main/tokyonight/images/rice.png)
 ![](https://github.com/Narmis-E/hyprland-dots/blob/main/tokyonight/images/rice2.png)
 <details>
-  <summary>Tokyonight Details (as seen in screenshots)</summary>
+  <summary>Tokyonight Details</summary>
  
   ### (kitty as terminal)
   1. waybar
@@ -21,11 +21,12 @@ Tokyonight:
 ***
 
 Mardu (Red + Black + White):
+![mardu-term](https://user-images.githubusercontent.com/109248529/221400035-32215c77-6bc4-4779-b318-4b7d46604a7e.png)
 
 https://user-images.githubusercontent.com/109248529/221398429-bfac577a-8cfc-41ba-b980-e851c5d62cf0.mp4
 
 <details>
-  <summary>Mardu Details (as seen in Video)</summary>
+  <summary>Mardu Details</summary>
   
   ### (kitty as terminal)
   1. waybar
@@ -34,4 +35,6 @@ https://user-images.githubusercontent.com/109248529/221398429-bfac577a-8cfc-41ba
   4. dunst
   5. Firefox
   6. VSCodium + wal extension
+  7. bottom (btm) system monitor
+  8. my neovim config
 </details>
