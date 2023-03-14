@@ -104,6 +104,12 @@ PATH=$PATH:~/.local/bin:/usr/local/bin/:/home/narmis/.cargo/bin
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+# sudo
+alias sudo='sudo '
+
+# cinny
+alias cinny='~/Downloads/Cinny_desktop-x86_64.AppImage'
+
 # nvim
 alias v='nvim'
 alias vh="nvim $HOME/.config/hypr/hyprland.conf"
@@ -111,8 +117,9 @@ alias vw="nvim $HOME/.config/waybar/config"
 alias vf='vifm'
 alias sv='sudoedit'
 
-# pacaur
-alias p='pacaur'
+# dnf
+alias d='dnf'
+alias in='install'
 
 # gomuks
 alias g='gomuks'
