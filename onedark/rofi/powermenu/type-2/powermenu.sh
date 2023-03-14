@@ -88,7 +88,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color E78287 --key-hl-color 71BDF2 --line-color 00000000 --inside-color 272C33 --separator-color 00000000
+		mpc stop && swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color E78287 --key-hl-color 71BDF2 --line-color 00000000 --inside-color 272C33 --separator-color 00000000
 		;;
     $suspend)
 		run_cmd --suspend
