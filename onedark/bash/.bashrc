@@ -119,7 +119,9 @@ alias sv='sudoedit'
 
 # dnf
 alias d='dnf'
-alias in='install'
+alias di='dnf install'
+alias du='dnf update'
+
 
 # gomuks
 alias g='gomuks'
