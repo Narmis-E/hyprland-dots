@@ -1,6 +1,6 @@
 {   "layer": "top",
     "position": "left",
-    "modules-left": ["custom/os", "custom/prev", "custom/toggle", "custom/next", "wlr/workspaces"],
+    "modules-left": ["custom/os", "custom/prev", "custom/toggle", "custom/next", "wlr/workspaces", "tray",],
     "modules-right": ["custom/dexcom", "custom/updates", "backlight", "pulseaudio", "memory", "network", "battery", "custom/launcher", "custom/separator", "clock", "custom/power"],
     "wlr/workspaces": {
 		"all-outputs": false,
@@ -135,6 +135,10 @@
 	 "exec": "cat /home/narmis/bg.txt",
 	 "on-click": "pgrep -x python3 > /dev/null || python3 ~/programs/python/pydexcom/dexcom-vertical.py &",
 	 "interval": 3
-	}
+	},
+  "tray": {
+        "icon-size": 18,
+        "spacing": 6
+  }
 }
 
