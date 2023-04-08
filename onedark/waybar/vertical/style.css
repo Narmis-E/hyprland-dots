@@ -195,3 +195,13 @@ tooltip {
   font-size: 16px;    
 
 }
+
+#tray{
+  margin: 9px;
+  border-radius: 10px;
+  margin-top: 3px;
+  padding: 7px;
+  padding-left: 5px;
+  background-color: #272C33;
+  font-size: 16px;    
+}
