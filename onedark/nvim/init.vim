@@ -49,7 +49,7 @@ nnoremap <C-f> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <S-t> :tabnew<CR>
 nnoremap <S-w> :BufferClose<CR>
-nnoremap <S-TAB> :BufferNext<CR>2
+nnoremap <S-TAB> :BufferNext<CR>
 cnoremap <A-BS> <c-w>
 inoremap <A-BS> <c-w>
 
