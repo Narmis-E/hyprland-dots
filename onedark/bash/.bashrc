@@ -100,20 +100,24 @@ _open_files_for_editing() {
 }
 
 #------------------------------------------------------------
-PATH=$PATH:~/.local/bin:/usr/local/bin/:/home/narmis/.cargo/bin
-export VISUAL=nvim
+export PATH=$PATH:~/.local/bin:/usr/local/bin/:/home/narmis/.cargo/bin
+export VISUAL=/home/narmis/.local/bin/lvim
 export EDITOR="$VISUAL"
 
 # sudo
 alias sudo='sudo '
 
+# todo
+alias todo='~/programs/c++/todo/todo'
+
 # cinny
 alias cinny='~/Downloads/Cinny_desktop-x86_64.AppImage'
 
 # nvim
-alias v='nvim'
-alias vh="nvim $HOME/.config/hypr/hyprland.conf"
-alias vw="nvim $HOME/.config/waybar/config"
+alias nvim='lvim'
+alias v='lvim'
+alias vh="lvim $HOME/hyprland-dots/onedark/hypr/hyprland.conf"
+alias vw="lvim $HOME/hyprland-dots/onedark/waybar/config"
 alias vf='vifm'
 alias sv='sudoedit'
 
@@ -121,7 +125,7 @@ alias sv='sudoedit'
 alias d='dnf'
 alias di='dnf install'
 alias du='dnf update'
-
+alias dr='dnf remove'
 
 # gomuks
 alias g='gomuks'
