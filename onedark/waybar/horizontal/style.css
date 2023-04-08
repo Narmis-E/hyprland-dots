@@ -1,0 +1,153 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: madness, Iosevka Nerd Font;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+window#waybar.empty #window {  
+ background:none;  
+}
+
+tooltip {
+    background: #272C33;
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #98C379;
+}
+
+#workspaces {
+	border: 3px solid #71BDF2;
+	margin-left: 10px;
+	border-radius: 5px;
+    padding: 3px 10px;
+}
+#workspaces button {
+    padding: 3px 10px;
+	background: #2C323C;
+    color: #ABB2BF;
+}
+
+#workspaces button.active {
+	color: white;
+    background-color: #65C1CD;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+	background-color: #62AEEF;
+	color: white;
+	border-radius: 5px;
+}
+
+#clock, #battery, #pulseaudio, #custom-updates, #mpd, #custom-dexcom, #tray, #network, #workspaces, #backlight{
+	background-color: #181818;
+    color: white;
+	background: #272C33;
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+#custom-power {
+	color: white;
+	border: 3px solid #E06B74;
+	border-radius: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	padding: 5px 10px;
+}
+
+#clock {
+	border-top: 3px solid #98C379;
+	border-right: 3px solid #98C379;
+	border-bottom: 3px solid #98C379;
+    border-radius: 0px 5px 5px 0px;
+}
+
+#battery {
+	border-top: 3px solid #98C379;
+	border-bottom: 3px solid #98C379;
+}
+
+#battery.charging {
+	color: #98C379;
+}
+
+#battery.warning:not(.charging) {
+    color: #181818;
+	background-color: #E06B74;
+}
+
+#network {
+	border-top: 3px solid #98C379;
+	border-left: 3px solid #98C379;
+	border-bottom: 3px solid #98C379;
+	border-radius: 5px 0px 0px 5px;
+}
+
+#pulseaudio {
+	border-top: 3px solid #98C379;
+	border-bottom: 3px solid #98C379;
+}
+
+#workspaces, #window{
+	background: transparent;
+    border-radius: 5px;
+    margin-left: 10px;
+	margin-right: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#backlight {
+	border-top: 3px solid #98C379;
+	border-bottom: 3px solid #98C379;
+}
+
+#tray {
+    color: #181818;
+    background-color: #D190E3;
+    border-radius: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	padding: 5px 5px;
+
+}
+
+#custom-dexcom {
+	border: 3px solid #71BDF2;
+	color: #E06B74;
+    background-color: #272C33;
+    border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding: 5px 10px;
+}
+
+#custom-updates {
+	border-top: 3px solid #98C379;
+	border-bottom: 3px solid #98C379;
+}
+
+#mpd {
+	color: white;
+	border: 3px solid #DAAA78;
+    background-color: #181818;
+	background: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
