@@ -117,7 +117,7 @@ alias cinny='~/Downloads/Cinny_desktop-x86_64.AppImage'
 alias nvim='lvim'
 alias v='lvim'
 alias vh="lvim $HOME/hyprland-dots/onedark/hypr/hyprland.conf"
-alias vw="lvim $HOME/hyprland-dots/onedark/waybar/config"
+alias vw="lvim $HOME/hyprland-dots/onedark/waybar/vertical/config"
 alias vf='vifm'
 alias sv='sudoedit'
 
