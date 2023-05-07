@@ -31,7 +31,7 @@
 	},
 	"custom/dexcom": {
 	 "format": "{}",
-	 "exec": "cat /home/narmis/BG.txt",
+	 "exec": "cat /home/narmis/bg.txt",
 	 "on-click": "pgrep -x python3 > /dev/null || python3 ~/programs/python/pydexcom/dexcom.py",
 	 "interval": 3
 	},

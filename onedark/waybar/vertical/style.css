@@ -45,7 +45,7 @@ tooltip {
 #custom-power {
     color: #141b1e;
     background-color: #E78287; 
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 10px;
     padding: 7px 4px;
     padding-left: 0px;
@@ -55,14 +55,14 @@ tooltip {
 
 #clock {
     color: #dadada;
-    font-size: 1.2em;
+    font-size: 17px;
     margin-bottom: 8px;
 }
 
 #custom-os {
     color: #141b1e;
     background-color: #A7CB8B;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 10px;
     padding: 7 0px;
     padding-left: 0px;
@@ -82,7 +82,7 @@ tooltip {
   border-radius: 10px;
   background-color: #272C33;
   color: #dadada;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 #battery {
@@ -105,7 +105,7 @@ tooltip {
   border-radius: 10px;
   background-color: #272C33;
   color: #dadada;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 #backlight {
@@ -116,7 +116,7 @@ tooltip {
   border-radius: 10px;
   background-color: #272C33;
   color: #dadada;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 #custom-updates {
@@ -127,7 +127,7 @@ tooltip {
   border-radius: 10px;
   background-color: #272C33;
   color: #dadada;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 #network {
@@ -147,7 +147,7 @@ tooltip {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 2px;
-  font-size:15px;
+  font-size:13px;
   padding: 6px;
   background-color: #272C33;
   color: #dadada;
@@ -161,7 +161,7 @@ tooltip {
   border-radius: 10px;
   background-color: #272C33;
   color: #dadada;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 #custom-next{
@@ -198,10 +198,9 @@ tooltip {
 
 #tray{
   margin: 9px;
+  margin-top: -1px;
   border-radius: 10px;
-  margin-top: 3px;
   padding: 7px;
-  padding-left: 5px;
   background-color: #272C33;
-  font-size: 16px;    
+  font-size: 15px;    
 }

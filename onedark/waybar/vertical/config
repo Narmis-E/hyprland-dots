@@ -64,26 +64,25 @@
     "on-click": "mpc prev",
   },
   "pulseaudio": {
-		"format": "{icon}{volume}",
+		"format": "{icon}{volume}%",
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "/home/narmis/.local/bin/audio-toggle.sh",
 		"format-muted": "<span color=\"#E78287\"></span> ",
         "format-icons": {
-            "headphone": "<span color=\"#71bdf2\">󪥆 </span>",
-            "hands-free": "<span color=\"#71bdf2\">󪥕</span>",
-            "headset": "<span color=\"#71bdf2\">󪥕</span>",
+            "headphone": "<span color=\"#71bdf2\">󰋋 </span>",
+            "hands-free": "<span color=\"#71bdf2\"> </span>",
+            "headset": "<span color=\"#71bdf2\"> </span>",
             "phone": "<span color=\"#71bdf2\"></span>",
             "portable": "<span color=\"#71bdf2\"></span>",
             "default": ["<span color=\"#71bdf2\"> </span>", "<span color=\"#71bdf2\">󰖀 </span>", "<span color=\"#71bdf2\">󰕾</span> "]
         }
   },
   "network": {
-    "format-wifi": "<span color=\"#E78287\"></span> ",
+    "format-wifi": "<span color=\"#55B6C2\"></span> ",
 		"tooltip-format": "{essid}: {ipaddr}/{cidr}",
-    "format-ethernet": " <span color=\"#E78287\"></span> ",
+    "format-ethernet": " <span color=\"#55B6C2\"></span> ",
     "format-linked": "<span color=\"#E78287\"></span> ",
     "format-disconnected": "<span color=\"#E78287\">睊</span> ",
-    "format-alt": "<span color=\"#E78287\">{ifname}: {ipaddr}/{cidr}</span>",
 		"on-click-right": "kitty -e nmtui"
 	},
   "backlight": {
@@ -133,8 +132,8 @@
   "custom/dexcom": {
 	 "format": "<span color=\"#E78287\"></span> {}",
 	 "exec": "cat /home/narmis/bg.txt",
-	 "on-click": "pgrep -x python3 > /dev/null || python3 ~/programs/python/pydexcom/dexcom-vertical.py &",
-	 "interval": 3
+	 "on-click": "systemctl --user restart dexcom.service",
+	 "interval": 1
 	},
   "tray": {
         "icon-size": 18,

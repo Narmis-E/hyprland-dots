@@ -145,3 +145,4 @@ alias lttt=' ls --tree -D -L 4 -I ${TREE_IGNORE} --icons'
 alias ltttt=' ls --tree -D -L 5 -I ${TREE_IGNORE} --icons'
 ################################################################################
 neofetch
+export PATH=$PATH:/home/narmis/.spicetify
