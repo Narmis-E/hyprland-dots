@@ -163,6 +163,7 @@ alias vh="lvim $HOME/tokyonight-v2/hypr/hyprland.conf"
 alias vw="lvim $HOME/tokyonight-v2/waybar/vertical/config"
 alias vf='vifm'
 alias sv='sudoedit'
+export CDPATH=.,** #for lvim toggleterm
 
 # gomuks
 alias g='gomuks'
