@@ -1,0 +1,268 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "custom/launcher",
+    "custom/notification",
+    "idle_inhibitor",
+    "tray",
+    "hyprland/workspaces",
+    //"mpd",
+    "custom/cava-internal",
+  ],
+  "modules-center": [
+    "custom/weather",
+    "custom/pacman",
+    "clock",
+    "custom/pomodoro",
+    "custom/dexcom",
+  ],
+  "modules-right": [
+    //"disk",
+    "network",
+    "temperature",
+    "memory",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    /* "cpu", */
+    // "custom/recording",
+    "custom/powermenu",
+  ],
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚<span foreground='#F7768E'><sup></sup></span>",
+      "none": "󰂚",
+      "dnd-notification": "󰂛<span foreground='#F7768E'><sup></sup></span>",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󰂚<span foreground='#F7768E'><sup></sup></span>",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "󰂛<span foreground='#F7768E'><sup></sup></span>",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/dexcom": {
+    "format": "<span color=\"#F7768E\"></span> {}",
+    "return-type": "json",
+    "exec": "python3 /home/narmis/Programs/python/pydexcom/dexcom.py",
+    "interval": 1,
+    "tooltip": "true",
+    "on-click": "killall python3 /home/narmis/Programs/python/pydexcom/dexcom.py"
+  },
+  "custom/pomodoro": {
+    "format": "{}",
+    "exec": "python3 ~/.config/waybar/scripts/pomodoro.py",
+    "interval": 1,
+    "return-type": "json",
+    "on-click": "gnome-pomodoro",
+    "on-click-right": "gnome-pomodoro --pause-resume",
+    "on-click-middle": "gnome-pomodoro --skip",
+    "tooltip": "true"
+  },
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "sleep 0.1 && /home/narmis/.config/rofi/launchers/type-3/launcher.sh ",
+    "tooltip-format": "sudo pacman -Q linux",
+    "tooltip": false,
+  },
+  "custom/cava-internal": {
+    "exec": "~/.config/waybar/Cava.sh",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "active-only": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "➊",
+      "2": "➋",
+      "3": "➌",
+      "4": "➍",
+      "5": "➎",
+      "6": "➏",
+      "7": "➐",
+      "8": "➑",
+      "9": "➒",
+      "10": "➓",
+      "urgent": "",
+      "focused": "󪤰",
+    }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "deactivated": "󪤨",
+      "activated": "󪤾"
+    },
+    "tooltip": false,
+    "on-click": "~/.local/bin/idle-lock.sh"
+  },
+  "backlight": {
+    "device": "nvidia_wmi_ec_backlight",
+    "on-scroll-up": "light -A 7",
+    "on-scroll-down": "light -U 7",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃚",
+      "󰃛",
+      "󰃜",
+      "󰃝",
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ]
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󪤈 {used}",
+    "path": "/home",
+    "tooltip": true,
+    "on-click": "sleep 0.1 && kitty ncdu",
+    "tooltip-format": "{used}/{total} => {path} {percentage_used}%",
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{icon} {volume}%",
+    "format-muted": "󪤑 Muted",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        "󰕾"
+      ]
+    },
+    /* "states": { */
+    /*   "warning": 100, */
+    /* }, */
+    "scroll-step": 1,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip": false,
+  },
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󱟢"
+    ],
+    "format-full": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "tooltip": true,
+    "on-click-middle": "echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode",
+    "on-click-right": "echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+
+  },
+  "clock": {
+    "on-click": "~/.config/waybar/to_latte.sh &",
+    "on-click-right": "~/.config/waybar/wallpaper_random.sh &",
+    "on-click-middle": "~/.config/waybar/live_wallpaper.sh &",
+    "interval": 1,
+    "format": "<span foreground='#9ECE6A'>󪥐</span> {:%I:%M %p  %A %b %d}",
+    "tooltip": true,
+    "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "months":     "<span color='#BB9AF7'><b>{}</b></span>",
+				"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+				"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      },
+    },
+  },
+  "memory": {
+    "on-click": "sleep 0.1 && kitty btm",
+    "interval": 1,
+    "format": "󪤔 {used}",
+    "states": {
+      "warning": 85,
+    },
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "󰻠 {usage}%"
+  },
+  "mpd": {
+    "max-length": 25,
+    "format": "<span foreground='#bb9af7'></span> {title}",
+    "format-paused": " {title}",
+    "format-stopped": "<span foreground='#bb9af7'></span>",
+    "format-disconnected": "",
+    "on-click": "mpc --quiet toggle",
+    "on-click-right": "mpc ls | mpc add",
+    "on-click-middle": "kitty ncmpcpp",
+    "on-scroll-up": "mpc --quiet prev",
+    "on-scroll-down": "mpc --quiet next",
+    "smooth-scrolling-threshold": 5,
+    "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
+  },
+  "network": {
+    "interval": 1,
+    "format-wifi": "󰖩 {essid}",
+    "format-ethernet": "󰈀  {ifname} ({ipaddr})",
+    "format-linked": "󪤅 {essid} (No IP)",
+    "format-disconnected": "󰖪 Disconnected",
+    "on-click": "kitty nmtui",
+    "tooltip": true
+  },
+  "temperature": {
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input",
+    "critical-threshold": 80,
+    "tooltip": false,
+    "format": " {temperatureC}°C"
+  },
+  "custom/powermenu": {
+    "format": "",
+    "on-click": "sleep 0.1 && /home/narmis/.config/rofi/powermenu/type-1/powermenu.sh",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 5
+  },
+  "custom/pacman": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󪤱",
+      "updated": "󪥛"
+    },
+    "exec": "waybar-module-pacman-updates"
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Adelaide",
+    "return-type": "json"
+  }, 
+  "custom/recording": {
+    "exec": "$XDG_CONFIG_HOME/waybar/scripts/recording.sh status",
+    "format": "{}",
+    "on-click": "$XDG_CONFIG_HOME/waybar/scripts/recording.sh toggle fullscreen",
+    "on-click-right": "$XDG_CONFIG_HOME/waybar/scripts/recording.sh toggle region",
+    "restart-interval": 1,
+    "return-type": "json",
+    "tooltip": true
+  }
+}

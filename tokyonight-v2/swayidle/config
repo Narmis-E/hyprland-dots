@@ -1,0 +1,2 @@
+timeout 250 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on && killall gtklock && gtklock > /dev/null'
+before-sleep 'sleep 5 && killall gtklock && gtklock> /dev/null'
