@@ -70,8 +70,6 @@
   "custom/launcher": {
     "format": "󰣇",
     "on-click": "sleep 0.1 && /home/narmis/.config/rofi/launchers/type-3/launcher.sh ",
-    "tooltip-format": "sudo pacman -Q linux",
-    "tooltip": false,
   },
   "custom/cava-internal": {
     "exec": "~/.config/waybar/Cava.sh",
@@ -103,7 +101,7 @@
       "activated": "󪤾"
     },
     "tooltip": false,
-    "on-click": "~/.local/bin/idle-lock.sh"
+    "on-click": "sleep 0.1 && ~/.local/bin/idle-lock.sh"
   },
   "backlight": {
     "device": "nvidia_wmi_ec_backlight",
@@ -143,7 +141,7 @@
     /*   "warning": 100, */
     /* }, */
     "scroll-step": 1,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "sleep 0.1 && pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip": false,
   },
   "battery": {
@@ -174,9 +172,6 @@
 
   },
   "clock": {
-    "on-click": "~/.config/waybar/to_latte.sh &",
-    "on-click-right": "~/.config/waybar/wallpaper_random.sh &",
-    "on-click-middle": "~/.config/waybar/live_wallpaper.sh &",
     "interval": 1,
     "format": "<span foreground='#9ECE6A'>󪥐</span> {:%I:%M %p  %A %b %d}",
     "tooltip": true,
@@ -222,7 +217,7 @@
     "format-ethernet": "󰈀  {ifname} ({ipaddr})",
     "format-linked": "󪤅 {essid} (No IP)",
     "format-disconnected": "󰖪 Disconnected",
-    "on-click": "kitty nmtui",
+    "on-click": "sleep 0.1 && kitty nmtui",
     "tooltip": true
   },
   "temperature": {
