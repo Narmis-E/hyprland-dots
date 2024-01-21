@@ -1,63 +1,92 @@
-# hyprland-dots [![awesome-rice-badge](https://raw.githubusercontent.com/zemmsoares/awesome-rices/main/assets/awesome-rice-badge.svg)](https://github.com/zemmsoares/awesome-rices)
-My dotfiles for my hyprland installs
+<div align="center">
+    <h1>Narmis's Hyprland Dotfiles  <a href="https://github.com/zemmsoares/awesome-rices"><img src="https://raw.githubusercontent.com/zemmsoares/awesome-rices/main/assets/awesome-rice-badge.svg"></a></img></h1>
+    <img src="https://img.shields.io/github/last-commit/narmis-e/hyprland-dots?style=for-the-badge&color=F7768E&labelColor=201a19">
+    <img src="https://img.shields.io/github/stars/narmis-e/hyprland-dots?style=for-the-badge&color=E0AF68&labelColor=1d1b16">
+    <img src="https://img.shields.io/github/repo-size/narmis-e/hyprland-dots?style=for-the-badge&color=6FB6E1&labelColor=1a1b1f">
+</div>
+
+## Common Software ⚙️
+- Windows Manager: 🪟
+  - [Hyprland](https://github.com/hyprwm/Hyprland)
+- Status Bar: 📊
+  - [Waybar](https://github.com/Alexays/Waybar)
+- Web Browser: 🌐
+  - Firefox
+- Terminal: 🚀
+  - [kitty](https://sw.kovidgoyal.net/kitty/)
+- Text Editor: ⌨️
+  - [Neovim](https://github.com/neovim/neovim)
+  - [VsCodium](https://github.com/VSCodium/vscodium) 
+- Shell: 💲
+  - [Oh My Zsh](https://ohmyz.sh/#install)
+  - [Oh My Bash](https://github.com/ohmybash/oh-my-bash/#getting-started)
+
+## Tokyonight-v2
 
 
-### Onedark:
 
-Horizontal bar:
+
+> [!WARNING]
+> - below rices are not maintained and may not work
+
+<hr>
+
+<div align="center">
+    <h3>Onedark 🌃</h3>
+</div>
+
 ![rice-h](https://user-images.githubusercontent.com/109248529/230755089-6eb99aa0-2015-4ba4-b06c-8b60ab06b934.png)
-Vertical bar:
 ![rice-v](https://user-images.githubusercontent.com/109248529/230755110-108990ce-1a78-41e1-8455-370acffabd79.png)
-
 <details>
-  <summary>Onedark Details</summary>
- 
-  ### Fedora 37
-  1. waybar
-  2. cmatrix
-  3. neovim (horizontal is my config and vertical is lunarnvim)
-  4. nautilus
-  5. ncmpcpp + mpd
-  6. discord (custom onedark betterdiscord css)
+  <summary>Desktop Details 🎑</summary>
+  
+  #### Fedora 37
+  - waybar
+  - cmatrix
+  - neovim (horizontal is my config and vertical is lunarnvim)
+  - nautilus
+  - ncmpcpp + mpd
+  - discord (custom onedark betterdiscord css)
 </details>
 
-***
+<div align="center">
+    <h3>Tokyonight v1 ⛩️</h3>
+</div>
 
-
-### Tokyonight:
 ![](https://github.com/Narmis-E/hyprland-dots/blob/main/tokyonight/images/rice.png)
 ![](https://github.com/Narmis-E/hyprland-dots/blob/main/tokyonight/images/rice2.png)
 <details>
-  <summary>Tokyonight Details</summary>
- 
-  ### Fedora 36
-  1. waybar
-  2. cmatrix
-  3. neovim
-  4. [Termtopdf](https://github.com/dsanson/termpdf.py)
-  5. Bad Pigges - Find old Rovio games [here](https://archive.org/details/AngryBirdsPCAllGamesLatestVersions) (unlock ig with code EEEE-EEEE-EEEE)
-  6. Firefox
-  7. VSCodium
-  8. Cemu
+  <summary>Desktop Details 🎑</summary>
+  
+  #### Fedora 36
+  - waybar
+  - cmatrix
+  - neovim
+  - [Termtopdf](https://github.com/dsanson/termpdf.py)
+  - Bad Pigges
+  - Firefox
+  - VSCodium
+  - Cemu
 </details>
 
-***
+<div align="center">
+    <h3>Mardu (Red + Black + White) 🎴</h3>
+</div>
 
-### Mardu (Red + Black + White):
 ![mardu-term](https://user-images.githubusercontent.com/109248529/221400035-32215c77-6bc4-4779-b318-4b7d46604a7e.png)
 
 https://user-images.githubusercontent.com/109248529/221398429-bfac577a-8cfc-41ba-b980-e851c5d62cf0.mp4
 
 <details>
-  <summary>Mardu Details</summary>
+  <summary>Desktop Details 🎑</summary>
   
-  ### Arch Linux
-  1. waybar
-  2. ncmpcpp + mpd
-  3. pipes.sh
-  4. dunst
-  5. Firefox
-  6. VSCodium + wal extension
-  7. bottom (btm) system monitor
-  8. my neovim config
+  #### Arch Linux
+  - waybar
+  - ncmpcpp + mpd
+  - pipes.sh
+  - dunst
+  - Firefox
+  - VSCodium + wal extension
+  - bottom (btm) system monitor
+  - my neovim config
 </details>
