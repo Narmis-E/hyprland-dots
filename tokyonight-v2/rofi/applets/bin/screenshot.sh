@@ -76,18 +76,13 @@ fi
 # notify and view screenshot
 notify_view() {
 	notify_cmd_shot='dunstify -u low --replace=699'
-	${notify_cmd_shot} "Copied to clipboard."
+	${notify_cmd_shot} "Screenshot Captured" "$dir/$file" -I "${dir}/$file" 
 	viewnior ${dir}/"$file"
 	if [[ -e "$dir/$file" ]]; then
 		${notify_cmd_shot} "Screenshot Saved."
 	else
 		${notify_cmd_shot} "Screenshot Deleted."
 	fi
-}
-
-# Copy screenshot to clipboard
-copy_shot () {
-	tee "$file" | wl-copy
 }
 
 # countdown
@@ -100,29 +95,35 @@ countdown () {
 
 # take shots
 shotnow () {
-	cd ${dir} && sleep 0.5 && grim $dir/$file | copy_shot
+	cd ${dir} && sleep 0.5
+	grim - | tee "$dir/$file" | wl-copy
 	notify_view
 }
 
 shot5 () {
 	countdown '5'
-	sleep 1 && cd ${dir} && grim $dir/$file | copy_shot
+	sleep 1 && cd ${dir}
+	grim - | tee "$dir/$file" | wl-copy
 	notify_view
 }
 
 shot10 () {
 	countdown '10'
-	sleep 1 && cd ${dir} && grim $dir/$file | copy_shot
+	sleep 1 && cd ${dir}
+	grim $dir/$file - | tee "$dir/$file" | wl-copy
 	notify_view
 }
 
 shotwin () {
-	cd ${dir} && hyprshot -m window -o $dir -f $file | copy_shot
-	notify_view
+    capture_method="hyprshot"
+    cd "${dir}" && hyprshot -m window -o "${dir}" -f "${file}"
+    cat "${dir}/${file}" | wl-copy
+    notify_view
 }
 
 shotarea () {
-	cd ${dir} && grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/$file | copy_shot
+	cd ${dir}
+	grim -g "$(slurp)" - | tee "$dir/$file" | wl-copy
 	notify_view
 }
 
