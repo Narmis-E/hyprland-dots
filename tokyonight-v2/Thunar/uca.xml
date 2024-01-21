@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
+	<icon>clipboard</icon>
+	<name>Copy to Clipboard</name>
+	<submenu></submenu>
+	<unique-id>1705810302553147-1</unique-id>
+	<command>cat %f | wl-copy</command>
+	<description>Copy to Clipboard</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
 	<icon>kitty</icon>
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
