@@ -13,12 +13,12 @@
 	<directories/>
 </action>
 <action>
-	<icon>lvim</icon>
-	<name>lvim</name>
+	<icon>nvim</icon>
+	<name>Neovim</name>
 	<submenu></submenu>
 	<unique-id>1699750114238438-1</unique-id>
-	<command>kitty lvim %f</command>
-	<description>LunarVim</description>
+	<command>kitty nvim %f</command>
+	<description>Neovim</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<other-files/>
