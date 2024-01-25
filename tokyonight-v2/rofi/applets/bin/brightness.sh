@@ -29,15 +29,15 @@ mesg="Device: ${card}, Level: $level"
 
 if [[ "$theme" == *'type-1'* ]]; then
 	list_col='1'
-	list_row='4'
+	list_row='5'
 	win_width='400px'
 elif [[ "$theme" == *'type-3'* ]]; then
 	list_col='1'
-	list_row='4'
+	list_row='5'
 	win_width='120px'
 elif [[ "$theme" == *'type-5'* ]]; then
 	list_col='1'
-	list_row='4'
+	list_row='5'
 	win_width='425px'
 elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) ]]; then
 	list_col='4'
@@ -51,12 +51,14 @@ if [[ "$layout" == 'NO' ]]; then
 	option_1=" Increase"
 	option_2=" Optimal"
 	option_3=" Decrease"
-	option_4=" Settings"
+	option_4="󱈑 Enable Battery Conservation"
+	option_5="󰢟 Disable Battery Conservation"
 else
 	option_1=""
 	option_2=""
 	option_3=""
-	option_4=""
+	option_4="󱈑"
+	option_5="󰢟"
 fi
 
 # Rofi CMD
@@ -73,7 +75,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
 }
 
 # Execute Command
@@ -85,7 +87,9 @@ run_cmd() {
 	elif [[ "$1" == '--opt3' ]]; then
 		light -U 5
 	elif [[ "$1" == '--opt4' ]]; then
-		xfce4-power-manager-settings
+		echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+	elif [[ "$1" == '--opt5' ]]; then
+		echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 	fi
 }
 
@@ -103,5 +107,8 @@ case ${chosen} in
         ;;
     $option_4)
 		run_cmd --opt4
+        ;;
+    $option_5)
+		run_cmd --opt5
         ;;
 esac
