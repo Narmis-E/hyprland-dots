@@ -242,7 +242,8 @@
       "has-updates": "󪤱",
       "updated": "󪥛"
     },
-    "exec": "waybar-module-pacman-updates"
+    "exec": "waybar-module-pacman-updates",
+    "on-click": "sleep 0.1 && update-notifier"
   },
   "custom/weather": {
     "format": "{}°",
