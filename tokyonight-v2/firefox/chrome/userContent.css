@@ -7,6 +7,6 @@
 
 /* Highlight color inside browser content window */
 ::selection {
-  background-color: dodgerblue !important;
+  background-color: #7AA2F7 !important;
   color: white !important;
 }
