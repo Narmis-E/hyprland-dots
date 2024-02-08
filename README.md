@@ -33,16 +33,17 @@ https://github.com/Narmis-E/hyprland-dots/assets/109248529/2a3c528c-a39f-4dec-a2
 <details>
   <summary>Desktop Details 🎑</summary>
   
-  #### Fedora 37
+  #### Arch Linux
   - waybar
-  - cmatrix
-  - neovim (horizontal is my config and vertical is lunarnvim)
-  - nautilus
-  - ncmpcpp + mpd
-  - discord (custom onedark betterdiscord css)
+  - cmatrix, lavat, cbonsai, lazygit, htop
+  - neovim
+  - thunar
+  - vscodium
+  - qemu/kvm running templeOS through virtmanager
+  - GIMP
+  - custom firefox css
+  - font-manager
 </details>
-
-
 
 > [!WARNING]
 > - below rices are not maintained and may not work
