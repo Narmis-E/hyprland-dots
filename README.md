@@ -21,8 +21,26 @@
   - [Oh My Zsh](https://ohmyz.sh/#install)
   - [Oh My Bash](https://github.com/ohmybash/oh-my-bash/#getting-started)
 
-## Tokyonight-v2
+<div align="center">
+    <h3>Tokyonight-v2 👹</h3>
+</div>
 
+![tokyonight-rice](https://github.com/Narmis-E/hyprland-dots/assets/109248529/a9f880cf-5088-4a96-ab97-43310bede7ad)
+
+https://github.com/Narmis-E/hyprland-dots/assets/109248529/2a3c528c-a39f-4dec-a2d9-a36afd7f7065
+
+
+<details>
+  <summary>Desktop Details 🎑</summary>
+  
+  #### Fedora 37
+  - waybar
+  - cmatrix
+  - neovim (horizontal is my config and vertical is lunarnvim)
+  - nautilus
+  - ncmpcpp + mpd
+  - discord (custom onedark betterdiscord css)
+</details>
 
 
 
