@@ -1,0 +1,206 @@
+window#waybar {
+  background-color: #1E2127;
+  font-family: madness, Iosevka Nerd Font;
+}
+
+tooltip {
+  background: #272C33;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #98C379;
+  margin: 1px;
+}
+
+#workspaces {
+  margin: 9px;
+  margin-top: 4px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  font-size: 16px;    
+}
+
+
+#workspaces button.active {
+	color: #65C1CD;
+    border-radius: 5px;
+}
+
+#workspaces button {
+  color: #dadada;
+   padding: 2px 7px;
+}
+
+#workspaces button:hover {
+  background: #232a2d;
+  color: #71bdf2;
+}
+
+#workspaces button.focused {
+  color: #71bdf2;
+}
+
+#custom-power {
+    color: #141b1e;
+    background-color: #E78287; 
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 7px 4px;
+    padding-left: 0px;
+    margin: 0px 9px;
+    margin-bottom: 10px;
+}
+
+#clock {
+    color: #dadada;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+#custom-os {
+    color: #141b1e;
+    background-color: #A7CB8B;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 7 0px;
+    padding-left: 0px;
+    margin: 0 10px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+#custom-separator {
+    color: #dadada; 
+}
+
+#memory {
+  margin: 9px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  color: #dadada;
+  font-size: 13px;
+}
+
+#battery {
+  margin: 9px;
+  margin-bottom: 9px;
+  margin-top: 0px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  color: #dadada;
+  font-size: 20px;
+}
+
+#pulseaudio {
+  margin: 9px;
+  margin-bottom: 0px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  color: #dadada;
+  font-size: 13px;
+}
+
+#backlight {
+  margin: 9px;
+  margin-bottom: 0px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  color: #dadada;
+  font-size: 13px;
+}
+
+#custom-updates {
+  margin: 9px;
+  margin-bottom: 0px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  color: #dadada;
+  font-size: 13px;
+}
+
+#network {
+  margin: 9px;
+  margin-top: 0px;
+  margin-bottom: 9px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  color: #dadada;
+  font-size: 20px;
+}
+
+#custom-launcher {
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 2px;
+  font-size:13px;
+  padding: 6px;
+  background-color: #272C33;
+  color: #dadada;
+}
+
+#custom-dexcom{
+  margin: 9px;
+  margin-bottom: 0px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  color: #dadada;
+  font-size: 13px;
+}
+
+#custom-next{
+  margin: 9px;
+  margin-top: -17px;
+  margin-bottom: 4px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  font-size: 16px;    
+}
+
+#custom-toggle{
+  margin: 9px;
+  margin-top: -17px;
+  padding: 7px;
+  padding-left: 5px;
+  background-color: #272C33;
+  font-size: 16px;    
+}
+
+
+#custom-prev {
+  margin: 9px;
+  margin-top: 3px;
+  padding: 7px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #272C33;
+  font-size: 16px;    
+
+}
+
+#tray{
+  margin: 9px;
+  margin-top: -1px;
+  border-radius: 10px;
+  padding: 7px;
+  background-color: #272C33;
+  font-size: 15px;    
+}

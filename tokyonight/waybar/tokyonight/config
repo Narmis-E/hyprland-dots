@@ -1,0 +1,126 @@
+{
+    "layer": "top",
+	"position": "bottom", 
+    "height": 1,
+	"width": 1910,
+	"margin-bottom": 10,
+    "modules-left": ["tray", "wlr/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/dexcom", "network", "pulseaudio", "backlight", "battery", "custom/updates", "custom/date", "clock", "custom/power"],
+	
+// Modules configuration
+
+	"wlr/workspaces": {
+		"all-outputs": false,
+		"on-click": "activate",
+	    "format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"format-icons": {
+			"1": "󩈞",
+			"2": "󯤴",
+			"3": "󩈦",
+			"4": "󯌄",
+			"5": "󯌎",
+			"6": "󯤅",
+			"7": "󯌋",
+			"8": "󩈊",
+			"urgent": " ",
+			"default": "󩈊"
+		  }
+     },
+	"custom/power": {
+		"format": " ",
+		"on-click": "/home/narmis/.local/bin/waybar-power.sh"
+	},
+	"custom/dexcom": {
+	 "format": "{}",
+	 "exec": "cat /home/narmis/BG.txt",
+	 "on-click": "pgrep -x python3 > /dev/null || python3 ~/programs/python/pydexcom/dexcom.py",
+	 "interval": 3
+	},
+	"custom/updates": {
+        "exec": "dnf check-update | wc -l",
+		"on-click": "dnf check-update | wc -l",
+        "interval": 7200,
+        "format": "󩈭 {}"
+    },
+	"clock": {
+		"format": "{:%H:%M}  ",
+		"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode"          : "year",
+			"mode-mon-col"  : 3,
+			"weeks-pos"     : "right",
+			"on-scroll"     : 1,
+			"on-click-right": "mode",
+			"format": {
+				"months":     "<span color='#ffead3'><b>{}</b></span>",
+				"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+				"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+        }
+    },
+	"battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "󩈢 {capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "  {capacity}%",
+           	"format-icons": ["", "", "", "", "", "", "", "", ""]
+	},
+    "backlight": {
+    "device": "nvidia_wmi_ec_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [" ", " ", " ", " ", " ", " ", " "],
+	"on-scroll-up": "light -A 1",
+    "on-scroll-down": "light -U 5"
+    },
+	"network": {
+        	"format-wifi": "  {essid}",
+			"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        	"format-ethernet": "{ifname}  ",
+        	"format-linked": "{ifname} ",
+        	"format-disconnected": "睊 Disconnected",
+        	"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "/home/narmis/.local/bin/audio-toggle.sh",
+		"format-muted": "󯤰",
+        "format-icons": {
+            "headphone": "󯤎",
+            "hands-free": "󯤎",
+            "headset": "󯤎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "󯤠", "󯤱"]
+        }
+    },
+    "hyprland/window": {
+        "format": "󯤍 {}"
+	 },
+	"tray": {
+        "icon-size": 22,
+        "spacing": 6
+    },
+    "mpris": {
+		"format": "{player_icon} <i>{title}</i>",
+		"format-paused": "{status_icon} {title}",
+		"player-icons": {
+			"default": "󪤷",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"paused": "󪤶"
+		},
+	}
+}

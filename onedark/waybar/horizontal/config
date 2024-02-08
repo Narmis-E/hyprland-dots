@@ -1,0 +1,137 @@
+{
+    "layer": "top",
+	"position": "bottom", 
+	"width": 1910,
+	"margin-bottom": 4,
+    "modules-left": ["tray", "wlr/workspaces", "hyprland/window"],
+    "modules-center": ["mpd"],
+    "modules-right": ["custom/dexcom", "network", "pulseaudio", "backlight", "battery", "custom/updates", "custom/date", "clock", "custom/power"],
+	
+// Modules configuration
+
+	"wlr/workspaces": {
+		"all-outputs": false,
+		"on-click": "activate",
+	    "format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"format-icons": {
+			"1": "󪤆",
+			"2": "󪤕",
+			"3": "󪥌",
+			"4": "󪤋",
+			"5": "󪤄",
+			"urgent": " ",
+			"default": "󪤰"
+		  }
+     },
+	"custom/power": {
+		"format": " ",
+		"on-click": "/home/narmis/.config/rofi/powermenu/type-2/powermenu.sh"
+	},
+	"custom/dexcom": {
+	 "format": "{}",
+	 "exec": "cat /home/narmis/bg.txt",
+	 "on-click": "pgrep -x python3 > /dev/null || python3 ~/programs/python/pydexcom/dexcom.py",
+	 "interval": 3
+	},
+	"custom/updates": {
+        "exec": "echo `expr $(dnf list updates | wc -l) - 1`",
+		"on-click": "echo `expr $(dnf list updates | wc -l) - 1`",
+        "interval": 7200,
+        "format": "<span color=\"#e78287\">󪥔</span> {}"
+    },
+	"clock": {
+		"format": "<span color=\"#e78287\"></span>  {:%I:%M}",
+		"format-alt": "{:%A, %B %d, %Y (%R)} <span color=\"#e78287\"></span> ",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode"          : "year",
+			"mode-mon-col"  : 3,
+			"weeks-pos"     : "right",
+			"on-scroll"     : 1,
+			"on-click-right": "mode",
+			"format": {
+				"months":     "<span color='#ffead3'><b>{}</b></span>",
+				"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+				"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+        }
+	},
+	"battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "<span color=\"#e78287\">󰂄</span> {capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "<span color=\"#e78287\">󱈏</span> {capacity}%",
+           	"format-icons": ["<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#e78287\"></span>", "<span color=\"#e78287\"></span>", "<span color=\"#e78287\"></span>"]
+	},
+    "backlight": {
+    "device": "nvidia_wmi_ec_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>"],
+	"on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-"
+    },
+	"network": {
+        	"format-wifi": "<span color=\"#E78287\"></span>  {essid}",
+			"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        	"format-ethernet": "{ifname} <span color=\"#E78287\"></span> ",
+        	"format-linked": "{ifname} <span color=\"#E78287\"></span>",
+        	"format-disconnected": "<span color=\"#E78287\">睊</span> Disconnected",
+        	"format-alt": "<span color=\"#E78287\">{ifname}: {ipaddr}/{cidr}</span>",
+			"on-click-right": "kitty -e nmtui"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "/home/narmis/.local/bin/audio-toggle.sh",
+		"format-muted": "<span color=\"#E78287\"></span> ",
+        "format-icons": {
+            "headphone": "<span color=\"#E78287\">󪥆</span>",
+            "hands-free": "<span color=\"#E78287\">󪥕</span>",
+            "headset": "<span color=\"#E78287\">󪥕</span>",
+            "phone": "<span color=\"#E78287\"></span>",
+            "portable": "<span color=\"#E78287\"></span>",
+            "default": ["<span color=\"#E78287\"></span>", "<span color=\"#E78287\">󰖀</span>", "<span color=\"#E78287\">󰕾</span> "]
+        }
+    },
+    "hyprland/window": {
+        "format": "<span color=\"#E78287\">󪤣</span> {}"
+	 },
+	"tray": {
+        "icon-size": 18,
+        "spacing": 6
+    },
+    "mpd": {
+		"format": "{stateIcon} {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) <span color=\"#E78287\"> </span>",
+		"on-click": "mpc toggle",
+		"format-disconnected": "Disconnected ",
+		"format-stopped": "<span color=\"#E78287\">󪤫</span>",
+		"interval": 10,
+		"consume-icons": {
+			"on": "  " // Icon shows only when "consume" is on
+		},
+		"random-icons": {
+			"off": "", // Icon grayed out when "random" is off
+			"on": ""
+		},
+		"repeat-icons": {
+			"on": " "
+		},
+		"single-icons": {
+			"on": " "
+		},
+		"state-icons": {
+			"paused": "<span color=\"#E78287\">󪤷</span>",
+			"playing": "<span color=\"#E78287\">󪤶</span>"
+		},
+		"tooltip-format": "MPD (connected)",
+		"tooltip-format-disconnected": "MPD (disconnected)"
+	}
+}

@@ -1,0 +1,142 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: madness, Iosevka Nerd Font;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+window#waybar.empty #window {  
+ background:none;  
+}
+
+tooltip {
+    background: #181818;
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #CF1B30;
+}
+
+#workspaces {
+	margin: 5px;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+#workspaces button {
+    padding: 5px 10px;
+	background: transparent;
+    color: white;
+}
+
+#workspaces button.active {
+    color: #181818;
+    background-color: #CF1B30;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+	background-color: #B57E82;
+	color: #181818;
+	border-radius: 5px;
+}
+
+#clock, #battery, #pulseaudio, #custom-updates, #workspaces, #mpd, #custom-dexcom, #tray, #network, #workspaces, #backlight{
+	background-color: #181818;
+	background: white;
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+#custom-power {
+	color: white;
+	border: 3px solid #CF1B30;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	padding: 5px 10px;
+}
+
+#clock {
+    color: #CF1B30;
+    border-radius: 0px 5px 5px 0px;
+}
+
+#battery {
+    color: #CF1B30;
+}
+
+#battery.charging {
+    color: #CF1B30;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #CF1B30;
+    color: #181818;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#network {
+	color: #CF1B30;
+	border-radius: 5px 0px 0px 5px;
+}
+
+#pulseaudio {
+	color: #CF1B30;
+}
+
+#workspaces, #window{
+	background: transparent;
+    border-radius: 5px;
+    margin-left: 10px;
+	margin-right: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#backlight {
+	color: #CF1B30;
+}
+
+#tray {
+    color: #181818;
+    background-color: #CF1B30;
+    border-radius: 5px;
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	padding: 5px 5px;
+
+}
+
+#custom-dexcom {
+    color: #CF1B30;
+    background-color: white;
+    border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding: 5px 10px;
+}
+
+#custom-updates {
+    color: #CF1B30;
+}
+
+#mpd {
+    background-color: #181818;
+	background: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Numix-BLACK-Pomegranate
+Comment=Part of the Numix-COLORS Desktop & Icon Theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=Numix-BLACK-Pomegranate
+GtkTheme=Numix-BLACK-Pomegranate
+IconTheme=Numix-BLACK-Pomegranate
+MetacityTheme=Numix-BLACK-Pomegranate
+

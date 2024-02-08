@@ -1,0 +1,143 @@
+{   "layer": "top",
+    "position": "left",
+    "modules-left": ["custom/os", "custom/prev", "custom/toggle", "custom/next", "wlr/workspaces", "tray",],
+    "modules-right": ["custom/dexcom", "custom/updates", "backlight", "pulseaudio", "memory", "network", "battery", "custom/launcher", "custom/separator", "clock", "custom/power"],
+    "wlr/workspaces": {
+		"all-outputs": false,
+		"on-click": "activate",
+	    "format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"format-icons": {
+			"1": "󪤆",
+			"2": "󪤕",
+			"3": "󪥌",
+			"4": "󪤋",
+			"5": "󪤄",
+			"urgent": " ",
+			"default": "󪤰"
+		  }
+     },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "/home/narmis/.config/rofi/powermenu/type-2/powermenu.sh"
+    },
+    "clock": {
+        "format": "{:%I\n%M}",
+    },
+    "battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15
+        	},
+        	"format": "{icon}",
+        	"format-charging": "<span color=\"#e78287\">󰂄</span>",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "<span color=\"#A7CB8B\">󱈏</span>",
+          "format-icons": ["<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#E78287\"></span>", "<span color=\"#e78287\"></span>", "<span color=\"#e78287\"></span>", "<span color=\"#e78287\"></span>","<span color=\"#A7CB8B\">󰁹</span>"]
+	},
+  "custom/os": {
+	"format": " ",
+	"on-click": "/home/narmis/.config/rofi/launchers/type-1/launcher.sh"
+  },
+  "custom/separator": {
+	  "format": "──────"
+  },
+  "memory": {
+	  "format": "<span color=\"#98C379\">󰍛</span> {}%",
+    "on-click": "kitty -e htop"
+  },
+  "custom/launcher": {
+	  "format": " ",
+	  "on-click": "/home/narmis/.config/rofi/launchers/type-1/launcher-run.sh"
+  },
+  "custom/toggle": {
+    "format": "<span color=\"#E78287\">󪤶</span>",
+    "on-click": "mpc toggle",
+  },
+  "custom/next": {
+    "format": "<span color=\"#E78287\">󪤖</span>",
+    "on-click": "mpc next",
+  },
+  "custom/prev": {
+    "format": "<span color=\"#E78287\">󪤗</span>",
+    "on-click": "mpc prev",
+  },
+  "pulseaudio": {
+		"format": "{icon}{volume}%",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "/home/narmis/.local/bin/audio-toggle.sh",
+		"format-muted": "<span color=\"#E78287\"></span> ",
+        "format-icons": {
+            "headphone": "<span color=\"#71bdf2\">󰋋 </span>",
+            "hands-free": "<span color=\"#71bdf2\"> </span>",
+            "headset": "<span color=\"#71bdf2\"> </span>",
+            "phone": "<span color=\"#71bdf2\"></span>",
+            "portable": "<span color=\"#71bdf2\"></span>",
+            "default": ["<span color=\"#71bdf2\"> </span>", "<span color=\"#71bdf2\">󰖀 </span>", "<span color=\"#71bdf2\">󰕾</span> "]
+        }
+  },
+  "network": {
+    "format-wifi": "<span color=\"#55B6C2\"></span> ",
+		"tooltip-format": "{essid}: {ipaddr}/{cidr}",
+    "format-ethernet": " <span color=\"#55B6C2\"></span> ",
+    "format-linked": "<span color=\"#E78287\"></span> ",
+    "format-disconnected": "<span color=\"#E78287\">睊</span> ",
+		"on-click-right": "kitty -e nmtui"
+	},
+  "backlight": {
+    "device": "nvidia_wmi_ec_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["<span color=\"#E5C07B\"></span>", "<span color=\"#E5C07B\"></span>", "<span color=\"#E5C07B\"></span>", "<span color=\"#E5C07B\"></span>", "<span color=\"#E5C07B\"></span>", "<span color=\"#E5C07B\"></span>", "<span color=\"#E5C07B\"></span>"],
+	  "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-"
+  },
+  "mpd": {
+		"format": "{stateIcon} {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) <span color=\"#E78287\"> </span>",
+		"on-click": "mpc toggle",
+		"format-disconnected": "Disconnected ",
+		"format-stopped": "<span color=\"#E78287\">󪤫</span>",
+		"interval": 10,
+		"consume-icons": {
+			"on": "  " // Icon shows only when "consume" is on
+		},
+		"random-icons": {
+			"off": "", // Icon grayed out when "random" is off
+			"on": ""
+		},
+		"repeat-icons": {
+			"on": " "
+		},
+		"single-icons": {
+			"on": " "
+		},
+		"state-icons": {
+			"paused": "<span color=\"#E78287\">󪤷</span>",
+			"playing": "<span color=\"#E78287\">󪤶</span>"
+		},
+		"tooltip-format": "MPD (connected)",
+		"tooltip-format-disconnected": "MPD (disconnected)"
+	},
+  "image#album-art": {
+	  "path": "/home/narmis/cover.jpg",
+	  "size": 50,
+	  "interval": 5,
+  },
+  "custom/updates": {
+    "format": "<span color=\"#D190E3\">󪥔</span> {}",
+    "exec": "echo `dnf check-update| grep -Ec ' updates'`",
+    "on-click": "echo `dnf check-update| grep -Ec ' updates'`",
+    "interval": 7200,
+  },
+  "custom/dexcom": {
+	 "format": "<span color=\"#E78287\"></span> {}",
+	 "exec": "cat /home/narmis/bg.txt",
+	 "on-click": "systemctl --user restart dexcom.service",
+	 "interval": 1
+	},
+  "tray": {
+        "icon-size": 18,
+        "spacing": 6
+  }
+}
+
