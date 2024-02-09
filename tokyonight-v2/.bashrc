@@ -4,6 +4,10 @@ case $- in
     *) return;;
 esac
 
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
 # Path to your oh-my-bash installation.
 export OSH='/usr/local/share/oh-my-bash'
 
@@ -149,7 +153,7 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:~/.local/bin:/usr/local/bin/
-export VISUAL=/home/narmis/.local/bin/lvim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export QT_QPA_PLATFORMTHEME=gtk2
 
@@ -157,16 +161,20 @@ export QT_QPA_PLATFORMTHEME=gtk2
 #alias waybar='waybar -c .config/waybar/config.jsonc -s .config/waybar/style.css'
 
 # nvim
-alias nvim='lvim'
-alias v='lvim'
-alias vh="lvim $HOME/tokyonight-v2/hypr/hyprland.conf"
-alias vw="lvim $HOME/tokyonight-v2/waybar/vertical/config"
+alias nvim='nvim'
+alias v='nvim'
+alias vh="nvim $HOME/hyprland-dots/tokyonight-v2/hypr/"
+alias vw="nvim $HOME/hyprland-dots/tokyonight-v2/waybar/config.jsonc"
 alias vf='vifm'
 alias sv='sudoedit'
 export CDPATH=.,** #for lvim toggleterm
 
 # gomuks
 alias g='gomuks'
+
+# tmux
+alias t='tmux'
+alias ta='tmux attach'
 
 # lazygit
 alias lz='lazygit'
