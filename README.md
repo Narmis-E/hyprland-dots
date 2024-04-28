@@ -21,6 +21,13 @@
   - [Oh My Zsh](https://ohmyz.sh/#install)
   - [Oh My Bash](https://github.com/ohmybash/oh-my-bash/#getting-started)
 
+> [!WARNING]
+> - For now, I have moved from a 'looks' (hyprland) oriented system, to a more functionality oriented one (swaywm).
+> - My current install is tailored to my hardware and through optimisations, is much more performant and efficient.
+> - I won't archive this repo just incase I start chasing the dragon again, but the below rices are no longer maintained. 
+
+
+
 <div align="center">
     <h3>Tokyonight-v2 👹</h3>
 </div>
@@ -44,9 +51,6 @@ https://github.com/Narmis-E/hyprland-dots/assets/109248529/2a3c528c-a39f-4dec-a2
   - custom firefox css
   - font-manager
 </details>
-
-> [!WARNING]
-> - below rices are not maintained and may not work
 
 <hr>
 
